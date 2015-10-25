@@ -4,7 +4,7 @@ OBJS = test.o
 TARGET = a.out
 
 $(TARGET):$(OBJS)
-	$(CXX) $(CXXFLAGS) $(INCLUDE) $(LIBS) $(OBJS) -o $(TARGET)
+	$(CXX) -v $(CXXFLAGS) $(INCLUDE) $(LIBS) $(OBJS) -o $(TARGET)
 
 .cpp.o:
 	$(CXX) $(CXXFLAGS) $(INCLUDE) -c $<
