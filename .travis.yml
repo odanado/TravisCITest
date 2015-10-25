@@ -2,6 +2,7 @@ language: cpp
 compiler:
     - gcc-4.8
     - clang
+sudo: false
 addons:
     apt:
         packages:
