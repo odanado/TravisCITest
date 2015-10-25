@@ -1,6 +1,7 @@
 language: cpp
 compiler:
     - gcc-4.8
+    - clang
 script:
-    - g++ --version
+    - $CXX --version
     - cd ./test && make && ./a.out
