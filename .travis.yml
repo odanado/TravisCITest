@@ -2,11 +2,8 @@ language: cpp
 compiler:
     - gcc-4.8
     - clang
-sudo: false
-addons:
-    apt:
-        packages:
-            - g++-4.8
+install:
+    - sudo apt-get install g++-4.8
 script:
     - $CXX --version
     - cd ./test && make && ./a.out
