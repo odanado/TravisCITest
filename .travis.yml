@@ -1,0 +1,6 @@
+language: cpp
+compiler:
+    - gcc-4.8
+script:
+    - g++ --version
+    - cd ./test && make && ./a.out
