@@ -1,4 +1,3 @@
-CXX = g++
 CXXFLAGS = -g -Wall -Wextra -std=c++11
 
 OBJS = test.o
