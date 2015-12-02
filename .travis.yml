@@ -12,3 +12,6 @@ install:
     - $CXX --version
 script:
     - cd ./test && make clean && make && ./test.out
+
+after_success:
+    - coveralls --gcov "$(which "${GCOV}")" --encoding iso-8859-1
