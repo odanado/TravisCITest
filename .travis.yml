@@ -11,4 +11,4 @@ install:
       fi
     - $CXX --version
 script:
-    - cd ./test && make clean && make && ./test.o
+    - cd ./test && make clean && make && ./test.out
