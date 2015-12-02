@@ -1,6 +1,9 @@
 # Mac
 .DS_store
 
+*.gcov
+*.gcda
+*.gcno
 # Compiled Object files
 *.slo
 *.lo

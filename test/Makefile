@@ -1,4 +1,4 @@
-CXXFLAGS = -Wall -Wextra -pthread -std=c++11 -O2
+CXXFLAGS = -Wall -Wextra -pthread -std=c++11 -O2 --coverage
 INCLUDE = ./
 
 SOURCES = $(wildcard *.cpp)
