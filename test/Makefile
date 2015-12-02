@@ -1,14 +1,19 @@
-CXXFLAGS = -Wall -Wextra -std=c++11
-OPTFLAGS = -O3 -march=native -fno-rtti -fno-stack-protector -DNDEBUG
+CXXFLAGS = -Wall -Wextra -pthread -std=c++11 -O2
+INCLUDE = ./
 
-OBJS = test.o
-TARGET = a.out
+SOURCES = $(wildcard *.cpp)
+GTEST_SRC = $(wildcard ./gtest/*.cc)
+OBJS  = $(addprefix ./, $(SOURCES:.cpp=.o))
+OBJS  += $(addprefix , $(GTEST_SRC:.cc=.o))
+
+TARGET = test.out
 
 $(TARGET):$(OBJS)
-	$(CXX) -v $(CXXFLAGS) $(INCLUDE) $(OPTFLAGS) $(LIBS) $(OBJS) -o $(TARGET)
-
-.cpp.o:
-	$(CXX) $(CXXFLAGS) $(INCLUDE) $(OPTFLAGS) -c $<
+	$(CXX) $(CXXFLAGS) -I $(INCLUDE) $(OBJS) -o $(TARGET)
+%.o: %.cpp
+	$(CXX) $(CXXFLAGS) -I $(INCLUDE) -o $@ -c $<
+%.o: %.cc
+	$(CXX) $(CXXFLAGS) -I $(INCLUDE) -o $@ -c $<
 
 clean:
-	rm $(OBJS) $(TARGET)
+	- rm -rf $(OBJS) $(TARGET)
