@@ -15,7 +15,7 @@ install:
           sudo add-apt-repository --yes 'deb http://llvm.org/apt/precise/ llvm-toolchain-precise main';
           sudo apt-get -qq update;
           sudo apt-get -qq install clang-3.5;
-          export CXX = "clang++-3.5";
+          export CXX="clang++-3.5";
       fi
     - $CXX --version
 script:
