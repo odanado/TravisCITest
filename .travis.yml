@@ -9,6 +9,7 @@ install:
           sudo apt-get -qq install g++-4.8;
           export CXX="g++-4.8";
       fi
+    - $INCLUDE_PATH="/usr/include/c++/4.8":$INCLUDE_PATH
     - $CXX --version
 script:
     - cd ./test && make clean && make && ./test.out
