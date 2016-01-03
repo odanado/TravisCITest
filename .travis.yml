@@ -9,12 +9,6 @@ install:
     - if [ "$CXX" = "g++" ]; then
           export CXX="g++-4.8";
       fi
-    - if [ "$CXX" == "clang++" ]; then
-          sudo add-apt-repository -y ppa:h-rayflood/llvm; 
-          sudo apt-get -qq update;
-          sudo apt-get install --allow-unauthenticated -qq clang-3.4;
-          export CXX="clang++-3.4";
-      fi
     - $CXX --version
 script:
     - cd ./test && make clean && make && ./test.out
